@@ -3,7 +3,8 @@ FROM nvidia/cuda
 ENV SRC_PATH=/opt/src \
     CUDA_PATH=/usr/local/cuda
 
-RUN apt-get update && apt-get install -y git nasm pkgconf
+RUN apt-get update && \
+    apt-get install -y git nasm pkgconf
 
 WORKDIR $SRC_PATH
 RUN git clone --depth 1 https://github.com/FFmpeg/nv-codec-headers.git
